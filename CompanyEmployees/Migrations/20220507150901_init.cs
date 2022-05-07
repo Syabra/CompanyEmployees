@@ -44,6 +44,27 @@ namespace CompanyEmployees.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Compamies",
+                columns: new[] { "CompanyId", "Address", "Country", "Name" },
+                values: new object[] { new Guid("7b2e2490-0148-41a3-ba6a-6da08c699d7b"), "U kajdogo vtorogo", "Meste4kova9", "ShershaVa9 p9tka" });
+
+            migrationBuilder.InsertData(
+                table: "Compamies",
+                columns: new[] { "CompanyId", "Address", "Country", "Name" },
+                values: new object[] { new Guid("ed62a714-b958-4e64-a399-c4cb975dcd58"), "She9 andre9", "Liberty", "Dvoinoi podborodok" });
+
+            migrationBuilder.InsertData(
+                table: "Employees",
+                columns: new[] { "EmployeeId", "Age", "CompanyId", "Name", "Position" },
+                values: new object[,]
+                {
+                    { new Guid("1196e3e2-feff-40d1-b88b-4074f3c90d1f"), 18, new Guid("ed62a714-b958-4e64-a399-c4cb975dcd58"), "Skoobi Doo", "Barista" },
+                    { new Guid("a4ac1859-e888-4bc7-a94b-40814190b679"), 59, new Guid("7b2e2490-0148-41a3-ba6a-6da08c699d7b"), "Bazon Higgs", "World Developer" },
+                    { new Guid("b69883db-64ee-467b-8e07-1ffd6c1545be"), 31, new Guid("ed62a714-b958-4e64-a399-c4cb975dcd58"), "Dora Nemo", "HR" },
+                    { new Guid("e375886b-07ce-4771-86b5-3dc3a62b3e23"), 47, new Guid("ed62a714-b958-4e64-a399-c4cb975dcd58"), "Jack Jons", "Manager" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Employees_CompanyId",
                 table: "Employees",
