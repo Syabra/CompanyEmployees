@@ -1,4 +1,6 @@
-﻿using Contracts;
+﻿using AutoMapper;
+using Contracts;
+using Entities;
 using LoggerService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,12 +12,14 @@ namespace CompanyEmployees.Controllers
     public class CompanyController : ControllerBase
     {
         private readonly IRepositoryManager _repository;
+        private readonly IMapper _mapper;
         private readonly ILoggerManager _logger;
 
-        public CompanyController(IRepositoryManager repository, ILoggerManager logger)
+        public CompanyController(IRepositoryManager repository, IMapper mapper, ILoggerManager logger)
         {
             _repository = repository;
             _logger = logger;   
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -24,7 +28,9 @@ namespace CompanyEmployees.Controllers
             try
             {
                 var companies = _repository.Company.GetAllCompanies(trackChanges: true);
-                return Ok(companies);
+                var companiesDto = _mapper.Map<IEnumerable<CompanyDto>>(companies);
+
+                return Ok(companiesDto);
             }
             catch (Exception ex)
             {

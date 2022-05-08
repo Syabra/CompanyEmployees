@@ -21,6 +21,7 @@ try
     builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
     builder.Services.AddScoped<ILoggerManager, LoggerManager>();
 
+    builder.Services.AddAutoMapper(typeof(Program).Assembly);
     builder.Services.AddControllers();
 
     // NLog: Setup NLog for DI
