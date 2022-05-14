@@ -41,7 +41,7 @@ else
     app.UseHsts();
 }
 
-app.ConfigureExceptionHandler(logger);
+//app.ConfigureExceptionHandler(logger);
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
