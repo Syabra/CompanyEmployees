@@ -29,7 +29,6 @@ namespace CompanyEmployees.Controllers
             var companiesDto = _mapper.Map<IEnumerable<CompanyDto>>(companies);
 
             return Ok(companiesDto);
-            //throw new Exception("Exception");
         }
 
         [HttpGet("{id}")]

@@ -40,8 +40,8 @@ else
 {
     app.UseHsts();
 }
-
-//app.ConfigureExceptionHandler(logger);
+var logger = new LoggerManager();
+app.ConfigureExceptionHandler(logger);
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
