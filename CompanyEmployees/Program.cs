@@ -22,7 +22,12 @@ builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
 builder.Services.AddScoped<ILoggerManager, LoggerManager>();
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
-builder.Services.AddControllers();
+builder.Services.AddControllers(config =>
+{
+    config.RespectBrowserAcceptHeader = true;
+    config.ReturnHttpNotAcceptable = true;
+}).AddXmlDataContractSerializerFormatters()
+.AddCustomCSVFormatter();
 
 // NLog: Setup NLog for DI
 builder.Logging.ClearProviders();
