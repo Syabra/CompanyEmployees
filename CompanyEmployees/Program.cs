@@ -5,56 +5,57 @@ using Microsoft.EntityFrameworkCore;
 using Contracts;
 using Repository;
 using LoggerService;
+using CompanyEmployees.Extensions;
 
-var logger = LogManager.Setup().LoadConfigurationFromFile().GetCurrentClassLogger();
-logger.Debug("init main");
+LogManager.Setup().LoadConfigurationFromFile(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
-try
+var builder = WebApplication.CreateBuilder(args);
+
+// Canfigure dataBase connection
+builder.Services.AddDbContext<RepositoryContext>(
+    opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection"),
+    opt2 => opt2.MigrationsAssembly("CompanyEmployees")));
+
+builder.Services.ConfigureLoggerService();
+
+builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
+builder.Services.AddScoped<ILoggerManager, LoggerManager>();
+
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddControllers();
+
+// NLog: Setup NLog for DI
+builder.Logging.ClearProviders();
+builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
+builder.Host.UseNLog();
+
+
+var app = builder.Build();
+
+if(builder.Environment.IsDevelopment())
 {
-    var builder = WebApplication.CreateBuilder(args);
-
-    // Canfigure dataBase connection
-    builder.Services.AddDbContext<RepositoryContext>(
-        opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection"),
-        opt2 => opt2.MigrationsAssembly("CompanyEmployees")));
-
-    builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
-    builder.Services.AddScoped<ILoggerManager, LoggerManager>();
-
-    builder.Services.AddAutoMapper(typeof(Program).Assembly);
-    builder.Services.AddControllers();
-
-    // NLog: Setup NLog for DI
-    builder.Logging.ClearProviders();
-    builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
-    builder.Host.UseNLog();
-
-    var app = builder.Build();
-
-
-    app.UseHttpsRedirection();
-    app.UseStaticFiles();
-
-    app.UseAuthorization();
-
-    app.MapControllers();
-
-    app.UseRouting();
-    app.UseEndpoints(endpoints =>
-    {
-        endpoints.MapControllerRoute(
-            name: "default",
-            pattern: "{controller=Home}/{action=Index}/{id?}");
-    });
-
-    app.Run();
+    app.UseDeveloperExceptionPage();
 }
-catch (Exception ex)
+else
 {
-    logger.Error(ex, "Stopped brogram because of exeption");
-    throw;
+    app.UseHsts();
 }
-finally
+
+app.ConfigureExceptionHandler(logger);
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.UseRouting();
+app.UseEndpoints(endpoints =>
 {
-    LogManager.Shutdown();
-}
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+});
+
+app.Run();
