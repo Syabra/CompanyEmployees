@@ -22,6 +22,7 @@ namespace CompanyEmployees.Controllers
             _mapper = mapper;
         }
 
+
         [HttpGet("{id}", Name = "GetEmployeesForCompany")]
         public IActionResult GetEmployeesForCompany(Guid companyId)
         {
@@ -40,6 +41,7 @@ namespace CompanyEmployees.Controllers
                 return Ok(employeesDto);
             }
         }
+
 
         [HttpPost]
         public IActionResult CreateEmployeeForCompany(Guid companyId, [FromBody]EmployeeForCreationDto employee)
@@ -63,6 +65,31 @@ namespace CompanyEmployees.Controllers
 
             var employeeToReturn = _mapper.Map<EmployeeDto>(empoyeeEntity);
             return CreatedAtRoute("GetEmployeesForCompany", new {companyId, id = employeeToReturn.Id}, employeeToReturn);
+        }
+
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteEmployeeCompany(Guid companyId, Guid id)
+        {
+            var company = _repository.Company.GetCompany(companyId, trackChanges: false);
+            if(company == null)
+            {
+                _logger.LogError($"Company with id: {companyId} doesn't exist in the database.");
+                return NotFound();
+            }
+
+            var employeeForCompany = _repository.Employee.GetEmployee(companyId, id, trackChanges: false);
+
+            if(employeeForCompany == null)
+            {
+                _logger.LogError($"Employee with id: {id} doesn't exist in the database.");
+                return NotFound();
+            }
+
+            _repository.Employee.DeleteEmployee(employeeForCompany);
+            _repository.Save();
+
+            return NoContent();
         }
     }
 }

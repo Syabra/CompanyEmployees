@@ -20,11 +20,18 @@ namespace Repository
                 FindByCondition(e => e.CompanyId.Equals(companyId), trackChanges)
                 .OrderBy(e => e.Name);
 
+        public Employee GetEmployee(Guid companyId, Guid id, bool trackChanges) =>
+            FindByCondition(x => x.CompanyId.Equals(companyId) && x.Id == id, trackChanges).SingleOrDefault();
+
         public void CreateEmployeeForCompany(Guid companyId, Employee employee)
         {
             employee.CompanyId = companyId;
             Create(employee);
         }
 
+        public void DeleteEmployee(Employee employee)
+        {
+            Delete(employee);
+        }
     }
 }
