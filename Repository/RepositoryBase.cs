@@ -26,7 +26,7 @@ namespace Repository
               .Where(expression)
               .AsNoTracking() :
             RepositoryContext.Set<T>()
-              .AsNoTracking();
+              .Where(expression);
 
         public void Create(T entity) => RepositoryContext.Set<T>().Add(entity);
         public void Update(T entity) => RepositoryContext.Set<T>().Update(entity);

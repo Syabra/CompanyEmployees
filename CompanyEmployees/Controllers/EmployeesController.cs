@@ -108,7 +108,7 @@ namespace CompanyEmployees.Controllers
                 return NotFound();
             }
 
-            var employeeEntity = _repository.Employee.GetEmployee(companyId, id, trackChanges: false);
+            var employeeEntity = _repository.Employee.GetEmployee(companyId, id, trackChanges: true);
             if(employeeEntity == null)
             {
                 _logger.LogInfo($"Employee with: {id} doesn't exist in the database");
