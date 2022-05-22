@@ -3,6 +3,7 @@ using Contracts;
 using Entities;
 using Entities.Models;
 using LoggerService;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CompanyEmployees.Controllers
@@ -93,12 +94,12 @@ namespace CompanyEmployees.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateEmployeeFromCompany(Guid companyId, Guid id, [FromBody]EmployeeForUpdateDto employee)
+        public IActionResult PartiallyUpdateEmployeeFromCompany(Guid companyId, Guid id, [FromBody]JsonPatchDocument<EmployeeForUpdateDto> patchDoc)
         {
-            if(employee == null)
+            if(patchDoc == null)
             {
-                _logger.LogError($"EployeeForUpdateDto object sent from client is null");
-                return BadRequest("EployeeForUpdateDto object is null");
+                _logger.LogError($"PatchDoc object sent from client is null");
+                return BadRequest("PatchDoc object is null");
             }
 
             var company = _repository.Company.GetCompany(companyId, trackChanges: false);
@@ -115,7 +116,10 @@ namespace CompanyEmployees.Controllers
                 return NotFound();
             }
 
-            _mapper.Map(employee, employeeEntity);
+            var employeeToPatch = _mapper.Map<EmployeeForUpdateDto>(employeeEntity);
+            patchDoc.ApplyTo(employeeToPatch);
+
+            _mapper.Map(employeeToPatch, employeeEntity);
             _repository.Save();
 
             return NoContent();
