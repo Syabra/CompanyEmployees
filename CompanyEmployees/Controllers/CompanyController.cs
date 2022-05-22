@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using CompanyEmployees.ModelBinders;
 using Contracts;
-using Entities;
+using Entities.DataTransferObjects;
 using Entities.Models;
 using LoggerService;
 using Microsoft.AspNetCore.Http;
@@ -98,6 +98,12 @@ namespace CompanyEmployees.Controllers
                 return BadRequest("Company collection is null");
             }
 
+            if (!ModelState.IsValid)
+            {
+                _logger.LogError("Invalid model state for the CompanyForUpdateDto object");
+                return UnprocessableEntity(ModelState);
+            }
+
             var companyEntities = _mapper.Map<IEnumerable<Company>>(companyCollection);
             foreach(var company in companyEntities)
             {
@@ -137,6 +143,12 @@ namespace CompanyEmployees.Controllers
             {
                 _logger.LogError("CompanyForUpdateDto object sent from client is null.");
                 return BadRequest("CompanyForUpdateDto object is null");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                _logger.LogError("Invalid model state for the CompanyForUpdateDto object");
+                return UnprocessableEntity(ModelState);
             }
 
             var companyEntity = _repository.Company.GetCompany(id, trackChanges: true);

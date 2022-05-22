@@ -4337,3 +4337,167 @@
 2022-05-22 11:54:26.6079 Debug Targets not configured for logger: Microsoft.EntityFrameworkCore.Model.Validation
 2022-05-22 11:54:27.6245 Debug Targets not configured for logger: Microsoft.EntityFrameworkCore.Update
 2022-05-22 11:54:30.2298 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.StatusCodeResult
+2022-05-22 12:08:22.5145 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-05-22 12:08:22.9240 Debug Found assembly location directory: 'D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2022-05-22 12:08:22.9240 Debug Auto loading based on NLog-Assembly found location: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0
+2022-05-22 12:08:22.9240 Debug Search for auto loading files in location: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0
+2022-05-22 12:08:22.9981 Debug Start auto loading, location: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0
+2022-05-22 12:08:23.0085 Info Auto loading assembly file: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2022-05-22 12:08:23.0085 Info Loading assembly file: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2022-05-22 12:08:23.4463 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2022-05-22 12:08:23.4463 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-05-22 12:08:23.4463 Info Auto loading assembly file: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2022-05-22 12:08:23.4463 Info Auto loading assembly file: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2022-05-22 12:08:23.4463 Info Loading assembly file: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2022-05-22 12:08:23.4463 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2022-05-22 12:08:23.4463 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-05-22 12:08:23.4562 Info Auto loading assembly file: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2022-05-22 12:08:23.4562 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2022-05-22 12:08:23.4562 Trace Assembly 'Microsoft.Extensions.Logging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2022-05-22 12:08:23.4562 Trace Assembly 'NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2022-05-22 12:08:23.4562 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2022-05-22 12:08:23.4562 Debug Auto loading done
+2022-05-22 12:08:23.4562 Info Message Template Auto Format enabled
+2022-05-22 12:08:23.4731 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-22 12:08:23.4731 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-05-22 12:08:23.4731 Warn Skipping unknown 'NLog' child node: target
+2022-05-22 12:08:23.4731 Trace ParseRulesElement
+2022-05-22 12:08:23.6865 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logfile' not found for logging rule: *.
+2022-05-22 12:08:23.9006 Debug Watching path 'D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees' filter 'nlog.config' for changes.
+2022-05-22 12:08:23.9006 Debug --- NLog configuration dump ---
+2022-05-22 12:08:23.9006 Debug Targets:
+2022-05-22 12:08:23.9006 Debug Rules:
+2022-05-22 12:08:23.9087 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]
+2022-05-22 12:08:23.9087 Debug --- End of NLog configuration dump ---
+2022-05-22 12:08:23.9228 Trace FindReachableObject<System.Object>:
+2022-05-22 12:08:23.9460 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]'
+2022-05-22 12:08:23.9460 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2022-05-22 12:08:23.9460 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2022-05-22 12:08:23.9590 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2022-05-22 12:08:23.9730 Info Validating config: Targets=0, ConfigItems=1, FilePath=D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees/nlog.config
+2022-05-22 12:08:25.2467 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-05-22 12:08:25.3568 Debug Hide assemblies for callsite
+2022-05-22 12:08:25.3568 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-05-22 12:08:25.3894 Debug Targets not configured for logger: Microsoft.Extensions.Hosting.Internal.ApplicationLifetime
+2022-05-22 12:08:25.4028 Debug Targets not configured for logger: Microsoft.Extensions.Hosting.Internal.Host
+2022-05-22 12:08:25.4028 Debug Targets not configured for logger: Microsoft.Hosting.Lifetime
+2022-05-22 12:08:25.4172 Debug Targets not configured for logger: CompanyEmployees
+2022-05-22 12:08:25.4462 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer
+2022-05-22 12:08:25.4462 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware
+2022-05-22 12:08:25.4462 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel
+2022-05-22 12:08:25.4462 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel.BadRequests
+2022-05-22 12:08:25.4462 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel.Connections
+2022-05-22 12:08:25.4462 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel.Http2
+2022-05-22 12:08:25.4539 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel.Http3
+2022-05-22 12:08:25.5249 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter
+2022-05-22 12:08:25.6039 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonPatchInputFormatter
+2022-05-22 12:08:25.6039 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonInputFormatter
+2022-05-22 12:08:25.6564 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter
+2022-05-22 12:08:25.7124 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory
+2022-05-22 12:08:25.7243 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder
+2022-05-22 12:08:25.7243 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker
+2022-05-22 12:08:25.8673 Debug Targets not configured for logger: Microsoft.AspNetCore.Hosting.Diagnostics
+2022-05-22 12:08:25.9692 Debug Targets not configured for logger: Microsoft.AspNetCore.Routing.EndpointMiddleware
+2022-05-22 12:08:25.9713 Debug Targets not configured for logger: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware
+2022-05-22 12:08:25.9713 Debug Targets not configured for logger: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware
+2022-05-22 12:08:25.9713 Debug Targets not configured for logger: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware
+2022-05-22 12:08:25.9713 Debug Targets not configured for logger: Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware
+2022-05-22 12:08:25.9990 Debug Targets not configured for logger: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware
+2022-05-22 12:08:26.0015 Debug Targets not configured for logger: Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware
+2022-05-22 12:08:26.0015 Debug Targets not configured for logger: Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware
+2022-05-22 12:08:26.3141 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets
+2022-05-22 12:10:43.7363 Debug Targets not configured for logger: Microsoft.AspNetCore.Routing.Matching.DfaMatcher
+2022-05-22 12:11:02.2472 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter
+2022-05-22 12:11:02.2472 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter
+2022-05-22 12:11:02.3383 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder
+2022-05-22 12:11:02.3383 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinder
+2022-05-22 12:11:02.6014 Debug Targets not configured for logger: Microsoft.EntityFrameworkCore.Infrastructure
+2022-05-22 12:11:03.0983 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector
+2022-05-22 12:11:03.0983 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor
+2022-05-22 12:15:29.4215 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-05-22 12:15:29.6500 Debug Found assembly location directory: 'D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2022-05-22 12:15:29.6500 Debug Auto loading based on NLog-Assembly found location: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0
+2022-05-22 12:15:29.6500 Debug Search for auto loading files in location: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0
+2022-05-22 12:15:29.6636 Debug Start auto loading, location: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0
+2022-05-22 12:15:29.6636 Info Auto loading assembly file: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2022-05-22 12:15:29.6636 Info Loading assembly file: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+2022-05-22 12:15:29.7004 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.7.4.1610. Product version: 1.7.4+e2bffa9e949fb4760d75aca224e78631c063f087. GlobalAssemblyCache: False
+2022-05-22 12:15:29.7004 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-05-22 12:15:29.7065 Info Auto loading assembly file: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\NLog.Extensions.Logging.dll succeeded!
+2022-05-22 12:15:29.7065 Info Auto loading assembly file: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2022-05-22 12:15:29.7065 Info Loading assembly file: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\NLog.Web.AspNetCore.dll
+2022-05-22 12:15:29.7065 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.14.0.2042. Product version: 4.14.0+18bbcdbd5bd13b4565c32d72e09502b7ca6c71d4. GlobalAssemblyCache: False
+2022-05-22 12:15:29.7065 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-05-22 12:15:29.7065 Info Auto loading assembly file: D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees\bin\Debug\net6.0\NLog.Web.AspNetCore.dll succeeded!
+2022-05-22 12:15:29.7065 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2022-05-22 12:15:29.7065 Trace Assembly 'Microsoft.Extensions.Logging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2022-05-22 12:15:29.7065 Trace Assembly 'NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2022-05-22 12:15:29.7065 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2022-05-22 12:15:29.7065 Debug Auto loading done
+2022-05-22 12:15:29.7200 Info Message Template Auto Format enabled
+2022-05-22 12:15:29.7200 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-22 12:15:29.7200 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-05-22 12:15:29.7200 Warn Skipping unknown 'NLog' child node: target
+2022-05-22 12:15:29.7200 Trace ParseRulesElement
+2022-05-22 12:15:29.7586 Warn Error has been raised. Exception: NLog.NLogConfigurationException: Target 'logfile' not found for logging rule: *.
+2022-05-22 12:15:29.7946 Debug Watching path 'D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees' filter 'nlog.config' for changes.
+2022-05-22 12:15:29.7946 Debug --- NLog configuration dump ---
+2022-05-22 12:15:29.7946 Debug Targets:
+2022-05-22 12:15:29.7946 Debug Rules:
+2022-05-22 12:15:29.8015 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]
+2022-05-22 12:15:29.8015 Debug --- End of NLog configuration dump ---
+2022-05-22 12:15:29.8015 Trace FindReachableObject<System.Object>:
+2022-05-22 12:15:29.8176 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] appendTo: [ ]'
+2022-05-22 12:15:29.8176 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2022-05-22 12:15:29.8176 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2022-05-22 12:15:29.8176 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2022-05-22 12:15:29.8176 Info Validating config: Targets=0, ConfigItems=1, FilePath=D:\VisualStudio\StudyFolder\CompanyEmployees\CompanyEmployees/nlog.config
+2022-05-22 12:15:31.1150 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-05-22 12:15:31.4516 Debug Hide assemblies for callsite
+2022-05-22 12:15:31.4516 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-05-22 12:15:31.5191 Debug Targets not configured for logger: Microsoft.Extensions.Hosting.Internal.ApplicationLifetime
+2022-05-22 12:15:31.5364 Debug Targets not configured for logger: Microsoft.Extensions.Hosting.Internal.Host
+2022-05-22 12:15:31.5515 Debug Targets not configured for logger: Microsoft.Hosting.Lifetime
+2022-05-22 12:15:31.6108 Debug Targets not configured for logger: CompanyEmployees
+2022-05-22 12:15:31.6468 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer
+2022-05-22 12:15:31.6468 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware
+2022-05-22 12:15:31.6468 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel
+2022-05-22 12:15:31.6468 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel.BadRequests
+2022-05-22 12:15:31.6468 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel.Connections
+2022-05-22 12:15:31.6468 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel.Http2
+2022-05-22 12:15:31.6468 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel.Http3
+2022-05-22 12:15:31.7816 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter
+2022-05-22 12:15:32.0659 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonPatchInputFormatter
+2022-05-22 12:15:32.0659 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonInputFormatter
+2022-05-22 12:15:32.2146 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Formatters.XmlDataContractSerializerOutputFormatter
+2022-05-22 12:15:32.3271 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory
+2022-05-22 12:15:32.3391 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder
+2022-05-22 12:15:32.3524 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker
+2022-05-22 12:15:32.5701 Debug Targets not configured for logger: Microsoft.AspNetCore.Hosting.Diagnostics
+2022-05-22 12:15:32.6740 Debug Targets not configured for logger: Microsoft.AspNetCore.Routing.EndpointMiddleware
+2022-05-22 12:15:32.6740 Debug Targets not configured for logger: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware
+2022-05-22 12:15:32.7046 Debug Targets not configured for logger: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware
+2022-05-22 12:15:32.7215 Debug Targets not configured for logger: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware
+2022-05-22 12:15:32.7215 Debug Targets not configured for logger: Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware
+2022-05-22 12:15:32.7571 Debug Targets not configured for logger: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware
+2022-05-22 12:15:32.7571 Debug Targets not configured for logger: Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware
+2022-05-22 12:15:32.7680 Debug Targets not configured for logger: Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware
+2022-05-22 12:15:33.1762 Debug Targets not configured for logger: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets
+2022-05-22 12:15:40.4007 Debug Targets not configured for logger: Microsoft.AspNetCore.Routing.Matching.DfaMatcher
+2022-05-22 12:15:40.4097 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter
+2022-05-22 12:15:40.5081 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder
+2022-05-22 12:15:40.5081 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinder
+2022-05-22 12:15:40.7888 Debug Targets not configured for logger: Microsoft.EntityFrameworkCore.Infrastructure
+2022-05-22 12:15:48.2999 Debug Targets not configured for logger: LoggerService.LoggerManager
+2022-05-22 12:15:48.2999 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector
+2022-05-22 12:15:48.2999 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor
+2022-05-22 12:16:39.3484 Debug Targets not configured for logger: Microsoft.EntityFrameworkCore.ChangeTracking
+2022-05-22 12:16:39.3484 Debug Targets not configured for logger: Microsoft.EntityFrameworkCore.Database.Command
+2022-05-22 12:16:39.3484 Debug Targets not configured for logger: Microsoft.EntityFrameworkCore.Query
+2022-05-22 12:16:39.3606 Debug Targets not configured for logger: Microsoft.EntityFrameworkCore.Database.Transaction
+2022-05-22 12:16:39.3606 Debug Targets not configured for logger: Microsoft.EntityFrameworkCore.Database.Connection
+2022-05-22 12:16:39.4174 Debug Targets not configured for logger: Microsoft.EntityFrameworkCore.Model
+2022-05-22 12:16:39.4174 Debug Targets not configured for logger: Microsoft.EntityFrameworkCore.Model.Validation
+2022-05-22 12:16:40.5458 Debug Targets not configured for logger: Microsoft.EntityFrameworkCore.Update
+2022-05-22 12:16:42.3212 Debug Targets not configured for logger: Microsoft.AspNetCore.Routing.DefaultLinkGenerator
+2022-05-22 12:16:42.3212 Debug Targets not configured for logger: Microsoft.AspNetCore.Mvc.Routing.EndpointRoutingUrlHelper

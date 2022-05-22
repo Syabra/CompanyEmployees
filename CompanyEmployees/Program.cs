@@ -6,6 +6,7 @@ using Contracts;
 using Repository;
 using LoggerService;
 using CompanyEmployees.Extensions;
+using Microsoft.AspNetCore.Mvc;
 
 LogManager.Setup().LoadConfigurationFromFile(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
@@ -15,6 +16,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<RepositoryContext>(
     opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection"),
     opt2 => opt2.MigrationsAssembly("CompanyEmployees")));
+
+builder.Services.Configure<ApiBehaviorOptions>(opt =>
+    opt.SuppressModelStateInvalidFilter = true);
 
 builder.Services.ConfigureLoggerService();
 
