@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CompanyEmployees.ActionFilters.Filters;
 using CompanyEmployees.ModelBinders;
 using Contracts;
 using Entities.DataTransferObjects;
@@ -50,14 +51,9 @@ namespace CompanyEmployees.Controllers
         }
 
         [HttpPost]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateCompany([FromBody]CompanyForCreationDto company)
         {
-            if(company == null)
-            {
-                _logger.LogError("CompanyForCreationDto object sent from client is null.");
-                return BadRequest();
-            }
-
             var companyEntity = _mapper.Map<Company>(company);
 
             _repository.Company.CreateCompany(companyEntity);
@@ -137,20 +133,9 @@ namespace CompanyEmployees.Controllers
         }
 
         [HttpPut("{id}")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> UpdateCompany(Guid id, [FromBody] CompanyForUpdateDto company)
         {
-            if (company == null)
-            {
-                _logger.LogError("CompanyForUpdateDto object sent from client is null.");
-                return BadRequest("CompanyForUpdateDto object is null");
-            }
-
-            if (!ModelState.IsValid)
-            {
-                _logger.LogError("Invalid model state for the CompanyForUpdateDto object");
-                return UnprocessableEntity(ModelState);
-            }
-
             var companyEntity = await _repository.Company.GetCompanyAsync(id, trackChanges: true);
             if (companyEntity == null)
             {

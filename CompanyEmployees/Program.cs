@@ -7,6 +7,7 @@ using Repository;
 using LoggerService;
 using CompanyEmployees.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using CompanyEmployees.ActionFilters.Filters;
 
 LogManager.Setup().LoadConfigurationFromFile(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
@@ -24,6 +25,7 @@ builder.Services.ConfigureLoggerService();
 
 builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
 builder.Services.AddScoped<ILoggerManager, LoggerManager>();
+builder.Services.AddScoped<ValidationFilterAttribute>();
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddControllers(config =>
@@ -33,6 +35,9 @@ builder.Services.AddControllers(config =>
 }).AddNewtonsoftJson()
   .AddXmlDataContractSerializerFormatters()
   .AddCustomCSVFormatter();
+
+builder.Services.AddScoped<ValidationFilterAttribute>();
+builder.Services.AddScoped<AsyncActionFilterExample>();
 
 // NLog: Setup NLog for DI
 builder.Logging.ClearProviders();
