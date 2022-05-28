@@ -25,7 +25,10 @@ builder.Services.ConfigureLoggerService();
 
 builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
 builder.Services.AddScoped<ILoggerManager, LoggerManager>();
+
 builder.Services.AddScoped<ValidationFilterAttribute>();
+builder.Services.AddScoped<ValidateCompanyExistsAttribute>();
+builder.Services.AddScoped<ValidateEmployeeForCompanyExistsAttribute>();
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddControllers(config =>
@@ -33,11 +36,9 @@ builder.Services.AddControllers(config =>
     config.RespectBrowserAcceptHeader = true;
     config.ReturnHttpNotAcceptable = true;
 }).AddNewtonsoftJson()
-  .AddXmlDataContractSerializerFormatters()
+  .AddXmlDataContractSerializerFormatters() 
   .AddCustomCSVFormatter();
 
-builder.Services.AddScoped<ValidationFilterAttribute>();
-builder.Services.AddScoped<AsyncActionFilterExample>();
 
 // NLog: Setup NLog for DI
 builder.Logging.ClearProviders();
