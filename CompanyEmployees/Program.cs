@@ -8,6 +8,8 @@ using LoggerService;
 using CompanyEmployees.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using CompanyEmployees.ActionFilters.Filters;
+using Repository.DataShaping;
+using Entities.DataTransferObjects;
 
 LogManager.Setup().LoadConfigurationFromFile(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
@@ -29,6 +31,8 @@ builder.Services.AddScoped<ILoggerManager, LoggerManager>();
 builder.Services.AddScoped<ValidationFilterAttribute>();
 builder.Services.AddScoped<ValidateCompanyExistsAttribute>();
 builder.Services.AddScoped<ValidateEmployeeForCompanyExistsAttribute>();
+
+builder.Services.AddScoped<IDataShaper<EmployeeDto>, DataShaper<EmployeeDto>>();
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddControllers(config =>
